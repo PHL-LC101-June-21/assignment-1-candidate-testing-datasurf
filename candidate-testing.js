@@ -5,7 +5,7 @@ const input = require('readline-sync');
 // TODO 1.1a: Define candidateName // 
 let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
-let question = "Who was the first American woman in space?\n";
+let question = "Who was the first American woman in space?";
 let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 let questions;
@@ -15,7 +15,7 @@ let candidateAnswers;
 
 function askForName() {
   // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("Please enter your name: \n");
+  candidateName = input.question("Please enter your name: ");
 }
 
 function askQuestion() {
@@ -27,9 +27,9 @@ function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
   if (candidateAnswer === correctAnswer){
-    console.log("That is correct. Great job!\n");
+    console.log("That is correct. Great job!");
   } else {
-    console.log("Sorry that is incorrect, you will never be an astronaut.\n");
+    console.log("Sorry that is incorrect, you will never be an astronaut.");
   }
 
   let grade;
@@ -40,7 +40,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
-  console.log("Hello, " + candidateName + " welcome to the astronaut training program!\n");
+  console.log("Hello, " + candidateName + " welcome to the astronaut training program!");
   askQuestion();
   gradeQuiz(this.candidateAnswers);
 }
