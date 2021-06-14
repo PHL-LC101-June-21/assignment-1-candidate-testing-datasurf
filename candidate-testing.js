@@ -6,7 +6,7 @@ const input = require('readline-sync');
 let candidateName = "";
 // TODO 1.2a: Define question, correctAnswer, and candidateAnswer //
 let question = "Who was the first American woman in space?\n";
-let correctAnswer = "Sally Ride\n";
+let correctAnswer = "Sally Ride";
 let candidateAnswer = "";
 let questions;
 let correctAnswers;
@@ -26,9 +26,9 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if (candidateAnswers === correctAnswer){
+  if (candidateAnswer === correctAnswer){
     console.log("That is correct. Great job!\n");
-  } else{
+  } else {
     console.log("Sorry that is incorrect, you will never be an astronaut.\n");
   }
 
