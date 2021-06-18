@@ -25,10 +25,13 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if (candidateAnswer === correctAnswer){
-    let grade = console.log("That is correct. Great job!");
+  let grade = "";
+  if (candidateAnswer === correctAnswer) {
+    grade = "That is correct. Great job!"
+    console.log(grade);
   } else {
-    let grade = console.log("Sorry that is incorrect, you will never be an astronaut.");
+    grade = "Sorry that is incorrect, you will never be an astronaut."
+    console.log(grade);
   } 
   
   return grade;
