@@ -21,7 +21,7 @@ function askForName(){
 function askQuestion(){
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   let answer = "";
-  for (i = 0; i < questions.length; i++){
+  for (let i = 0; i < questions.length; i++){
     answer = input.question(questions[i]);
     candidateAnswers.push(answer);
     console.log("");
@@ -30,22 +30,41 @@ function askQuestion(){
 
 function gradeQuiz(candidateAnswers) {
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  let numberOfQuizQuestions = 0;
+  let numberOfCorrectAnswers = 0;
+  
+  console.log(`Candidate Name: ${candidateName}`);
+  for (let i = 0;i < candidateAnswers.length;i++) {
+   let inquiryPrint = `${numberOfQuizQuestions + 1}) ${questions[i]}`
+   let candidateAnswerPrint = `Your Answer: ${candidateAnswers[i]}`
+   let answerPrint = `Correct Answer: ${correctAnswers[i]}`
 
-  for (i = 0;i < candidateAnswers.length;i++) {
-    if (candidateAnswers[i] === correctAnswers[i]){
-      console.log(`
-      Your Answer: ${candidateAnswers[i]}  
-      Correct Answer: ${correctAnswers[i]}
-      That is correct! Good job!
-      `);
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
+      console.log(inquiryPrint);
+      console.log(candidateAnswerPrint);
+      console.log(answerPrint);
+      console.log("");
+      numberOfCorrectAnswers += 1;
     } else {
-       console.log(`
-      Your Answer: ${candidateAnswers[i]}  
-      Correct Answer: ${correctAnswers[i]}
-      Sorry that was incorrect.
-      `);
+      console.log(inquiryPrint);
+      console.log(candidateAnswerPrint);
+      console.log(answerPrint);
+      console.log("");
     }
+    numberOfQuizQuestions += 1
   }
+
+  let grade = (numberOfCorrectAnswers) / (numberOfQuizQuestions) * 100
+
+  let gradePrint = `>>> Overall Grade: ${grade}% (${numberOfCorrectAnswers} of ${numberOfQuizQuestions} responses correct) <<<`
+  
+  if (numberOfCorrectAnswers >= 4){
+    console.log(gradePrint);
+    console.log(`>>> Status: PASSED <<<`)
+    } else {
+    console.log(gradePrint);
+    console.log(`>>> Status: FAILED <<<`)
+    }  
 }
 
 function runProgram() {
